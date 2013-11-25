@@ -1,0 +1,2 @@
+16K	task_1/mirantis/
+du -sh task_1/mirantis/ > task_1/mirantis/size
