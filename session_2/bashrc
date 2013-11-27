@@ -1,0 +1,9 @@
+# Что бы использовать эти алиасы, нужно их добавить в .bashrc
+# cat bashrc >> ~/.bashrc
+alias gd='git diff'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gl='git log --oneline'
+alias clean='find ~/ -name "*.pyc" -o -name "*.swp" | xargs rm'
+alias cdw='cd ~/la'
