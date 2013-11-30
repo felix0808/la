@@ -1,7 +1,6 @@
 #!/bin/bash
-touch not_ver.file
-
 if [ $# -eq 0 ];then
+	touch not_ver.file
 	for i in {0..10};do
 		touch "ver$i.file"
 		ln -s "ver$i.file" "ver$i.file.lnk"
@@ -14,6 +13,7 @@ elif [ $# -eq 1 ];then
 		echo "Cant create folder :("
 		exit
 	fi
+	touch "$directory"not_ver.file
 	for i in {0..10};do
 		touch "$directory""ver$i.file"
 		ln -s "$directory""ver$i.file" "$directory""ver$i.file.lnk"
