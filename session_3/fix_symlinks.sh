@@ -5,13 +5,10 @@ else directory="$(pwd)/"
 fi
 for file in "$directory"*;do
 	if [ -h "$file" ];then
-		cat $file &> /dev/null
-		errCode=$?
-		content="$(cat $file 2> /dev/null)"
-		if [ $errCode -ne 0 ];then
+		if [ ! -e "$file" ];then
 			rm $file
-		elif [ "$content" = "" ];then 			
-			echo "Warning: $file - Empty symbolic link"
+		elif [ ! -s "$file" ];then
+			echo "Warning: $file - link to empty file"
 		fi
 	fi
 done
